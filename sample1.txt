@@ -1,0 +1,135 @@
+
+--------------------------------------------------------------------------------
+                     ADDING ITEMS TO THE ARRAY OF VERTICES
+--------------------------------------------------------------------------------
+After adding --- Denver           Array Size: 1     Max Vertices: 2  
+After adding --- Boston           Array Size: 2     Max Vertices: 2  
+After adding --- Buffalo          Array Size: 3     Max Vertices: 4  
+After adding --- Dallas           Array Size: 4     Max Vertices: 4  
+After adding --- Birmingham       Array Size: 5     Max Vertices: 8  
+After adding --- Cleveland        Array Size: 6     Max Vertices: 8  
+After adding --- Chicago          Array Size: 7     Max Vertices: 8  
+
+
+--------------------------------------------------------------------------------
+                      THIS IS WHAT THE MATRIX LOOKS LIKE: 
+--------------------------------------------------------------------------------
+0    1769 1370 663  1095 1227 920  
+
+1769 0    400  1551 1052 551  851  
+
+1370 400  0    1198 776  173  454  
+
+663  1551 1198 0    581  1025 803  
+
+1095 1052 776  581  0    618  578  
+
+1227 551  173  1025 618  0    308  
+
+920  851  454  803  578  308  0    
+
+
+
+--------------------------------------------------------------------------------
+              THIS IS WHAT THE ADJACENCY LIST LOOKS LIKE ON PAPER: 
+--------------------------------------------------------------------------------
+0 Denver ---> 1370 Buffalo ---> 920 Chicago ---> 1227 Cleveland ---> 663 Dallas ---> 1095 Birmingham ---> 1769 Boston
+
+0 Boston ---> 551 Cleveland ---> 1551 Dallas ---> 1769 Denver ---> 1052 Birmingham ---> 400 Buffalo ---> 851 Chicago
+
+0 Buffalo ---> 454 Chicago ---> 173 Cleveland ---> 1198 Dallas ---> 776 Birmingham ---> 400 Boston ---> 1370 Denver
+
+0 Dallas ---> 803 Chicago ---> 1025 Cleveland ---> 581 Birmingham ---> 1551 Boston ---> 1198 Buffalo ---> 663 Denver
+
+0 Birmingham ---> 1052 Boston ---> 776 Buffalo ---> 578 Chicago ---> 618 Cleveland ---> 581 Dallas ---> 1095 Denver
+
+0 Cleveland ---> 173 Buffalo ---> 1227 Denver ---> 308 Chicago ---> 1025 Dallas ---> 618 Birmingham ---> 551 Boston
+
+0 Chicago ---> 851 Boston ---> 454 Buffalo ---> 308 Cleveland ---> 578 Birmingham ---> 803 Dallas ---> 920 Denver
+
+
+
+--------------------------------------------------------------------------------
+              THIS IS HOW THE ADJACENCY LIST TRANSLATES TO IN WORDS: 
+--------------------------------------------------------------------------------
+Denver connects to Buffalo and the weight is: 1370
+Denver connects to Chicago and the weight is: 920
+Denver connects to Cleveland and the weight is: 1227
+Denver connects to Dallas and the weight is: 663
+Denver connects to Birmingham and the weight is: 1095
+Denver connects to Boston and the weight is: 1769
+
+Boston connects to Cleveland and the weight is: 551
+Boston connects to Dallas and the weight is: 1551
+Boston connects to Denver and the weight is: 1769
+Boston connects to Birmingham and the weight is: 1052
+Boston connects to Buffalo and the weight is: 400
+Boston connects to Chicago and the weight is: 851
+
+Buffalo connects to Chicago and the weight is: 454
+Buffalo connects to Cleveland and the weight is: 173
+Buffalo connects to Dallas and the weight is: 1198
+Buffalo connects to Birmingham and the weight is: 776
+Buffalo connects to Boston and the weight is: 400
+Buffalo connects to Denver and the weight is: 1370
+
+Dallas connects to Chicago and the weight is: 803
+Dallas connects to Cleveland and the weight is: 1025
+Dallas connects to Birmingham and the weight is: 581
+Dallas connects to Boston and the weight is: 1551
+Dallas connects to Buffalo and the weight is: 1198
+Dallas connects to Denver and the weight is: 663
+
+Birmingham connects to Boston and the weight is: 1052
+Birmingham connects to Buffalo and the weight is: 776
+Birmingham connects to Chicago and the weight is: 578
+Birmingham connects to Cleveland and the weight is: 618
+Birmingham connects to Dallas and the weight is: 581
+Birmingham connects to Denver and the weight is: 1095
+
+Cleveland connects to Buffalo and the weight is: 173
+Cleveland connects to Denver and the weight is: 1227
+Cleveland connects to Chicago and the weight is: 308
+Cleveland connects to Dallas and the weight is: 1025
+Cleveland connects to Birmingham and the weight is: 618
+Cleveland connects to Boston and the weight is: 551
+
+Chicago connects to Boston and the weight is: 851
+Chicago connects to Buffalo and the weight is: 454
+Chicago connects to Cleveland and the weight is: 308
+Chicago connects to Birmingham and the weight is: 578
+Chicago connects to Dallas and the weight is: 803
+Chicago connects to Denver and the weight is: 920
+
+--------------------------------------------------------------------------------
+                                PRIM'S ALGORITHM:
+--------------------------------------------------------------------------------
+                      Denver          -->   Dallas          663
+                      Dallas          -->   Birmingham      581
+                      Birmingham      -->   Chicago         578
+                      Chicago         -->   Cleveland       308
+                      Cleveland       -->   Buffalo         173
+                      Buffalo         -->   Boston          400
+
+--------------------------------------------------------------------------------
+                               KRUSKAL'S ALGORITHM:
+--------------------------------------------------------------------------------
+                      Buffalo         -->   Cleveland       173
+                      Chicago         -->   Cleveland       308
+                      Boston          -->   Buffalo         400
+                      Birmingham      -->   Chicago         578
+                      Birmingham      -->   Dallas          581
+                      Dallas          -->   Denver          663
+
+--------------------------------------------------------------------------------
+                              DIJKSTRA'S ALGORITHM:
+--------------------------------------------------------------------------------
+                      Traveling from Denver to Boston
+                      TOTAL COST: 1769
+                      Denver          -->   Boston          1769
+
+
+DEALLOCATING NOW...
+
+DONE DEALLOCATING EVERYTHING
+
